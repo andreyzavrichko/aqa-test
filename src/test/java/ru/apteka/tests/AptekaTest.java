@@ -27,16 +27,17 @@ import static io.qameta.allure.Allure.step;
 class AptekaTest {
     @BeforeAll
     static void setUp() throws MalformedURLException {
-        boolean isRemote = true;
-        if (isRemote) {
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setBrowserName("chrome");
-            capabilities.setCapability("enableVNC:", true);
-            WebDriver driver = new RemoteWebDriver(URI.create("http://localhost:4444/wd/hub").toURL(), capabilities);
-            setWebDriver(driver);
-        } else {
-            Configuration.browser = "firefox";
-        }
+        Configuration.remote = "http://localhost:4444/wd/hub";
+//        boolean isRemote = true;
+//        if (isRemote) {
+//            DesiredCapabilities capabilities = new DesiredCapabilities();
+//            capabilities.setBrowserName("chrome");
+//            capabilities.setCapability("enableVNC:", true);
+//            WebDriver driver = new RemoteWebDriver(URI.create("http://localhost:4444/wd/hub").toURL(), capabilities);
+//            setWebDriver(driver);
+//        } else {
+//            Configuration.browser = "firefox";
+//        }
     }
 
 
