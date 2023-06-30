@@ -1,0 +1,1 @@
+[2023-06-30T12:25:12.261Z] [SEVERE] https://aptekaeconom.com/ - Failed to load resource: the server responded with a status of 500 ()
