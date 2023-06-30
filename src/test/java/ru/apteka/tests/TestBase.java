@@ -18,7 +18,7 @@ public class TestBase {
 
     @BeforeAll
     public static void setDriver() throws MalformedURLException {
-        boolean isRemote = false;
+        boolean isRemote = true;
         if (isRemote) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setBrowserName("chrome");
