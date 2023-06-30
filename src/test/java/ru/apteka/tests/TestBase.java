@@ -17,7 +17,7 @@ import static com.codeborne.selenide.WebDriverRunner.setWebDriver;
 public class TestBase {
 
     @BeforeAll
-    public static void setDriver() throws MalformedURLException {
+    static void setUp() throws MalformedURLException {
         boolean isRemote = true;
         if (isRemote) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -26,10 +26,8 @@ public class TestBase {
             WebDriver driver = new RemoteWebDriver(URI.create("http://localhost:4444/wd/hub").toURL(), capabilities);
             setWebDriver(driver);
         } else {
-            Configuration.browser = "chrome";
-            Configuration.browserSize="1920x1080";
+            Configuration.browser = "firefox";
         }
-
     }
 
 
