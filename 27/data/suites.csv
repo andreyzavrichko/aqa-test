@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Jun 30 13:19:41 GMT 2023","Fri Jun 30 13:19:54 GMT 2023","12536","","Тесты на сайте Эконом-аптека","","ru.apteka.tests.AptekaTest","shouldAddToCartTest","Проверка возможности перенести товар в корзину",""
+"passed","Fri Jun 30 13:19:28 GMT 2023","Fri Jun 30 13:19:41 GMT 2023","13665","","Тесты на сайте Эконом-аптека","","ru.apteka.tests.AptekaTest","shouldFavoritTest","Проверка возможности отложить товар",""
+"passed","Fri Jun 30 13:19:15 GMT 2023","Fri Jun 30 13:19:27 GMT 2023","11994","","Тесты на сайте Эконом-аптека","","ru.apteka.tests.AptekaTest","shouldOpenCatalogTabTest","Переход по подкатегориям в каталоге товаров",""
+"passed","Fri Jun 30 13:20:11 GMT 2023","Fri Jun 30 13:20:24 GMT 2023","13525","","Тесты на сайте Эконом-аптека","","ru.apteka.tests.AptekaTest","shouldClearCardTest","Проверка очистки корзины",""
+"passed","Fri Jun 30 13:19:54 GMT 2023","Fri Jun 30 13:20:02 GMT 2023","8420","","Тесты на сайте Эконом-аптека","","ru.apteka.tests.AptekaTest","shouldSearchPositiveTest","Проверка поиска - позитивный сценарий",""
+"passed","Fri Jun 30 13:20:02 GMT 2023","Fri Jun 30 13:20:11 GMT 2023","8238","","Тесты на сайте Эконом-аптека","","ru.apteka.tests.AptekaTest","shouldSearchNegativeTest","Проверка поиска - негативный сценарий",""
