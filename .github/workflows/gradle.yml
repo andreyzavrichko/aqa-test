@@ -22,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Run chmod to make gradlew executable
+      run: chmod +x ./gradlew
     - uses: Xotabu4/selenoid-github-action@v2
     - run: ./gradlew clean test
     - uses: actions/checkout@v3
@@ -30,15 +32,9 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    - name: Run chmod to make gradlew executable
-      run: chmod +x ./gradlew
-
 
     - name: Build with Gradle
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
-
-    - name: Gradlew clean test
-      run: ./gradlew clean test
 
     - name: Get Allure history
       uses: actions/checkout@v2
