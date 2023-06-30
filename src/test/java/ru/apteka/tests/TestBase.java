@@ -22,7 +22,6 @@ public class TestBase {
         if (isRemote) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setBrowserName("chrome");
-            capabilities.setCapability("enableVNC:", true);
             WebDriver driver = new RemoteWebDriver(URI.create("http://localhost:4444/wd/hub").toURL(), capabilities);
             setWebDriver(driver);
         } else {
