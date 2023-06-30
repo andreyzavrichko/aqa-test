@@ -1,25 +1,52 @@
 package ru.apteka.tests;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.Cookie;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import ru.apteka.helpers.Attach;
 import ru.apteka.pages.*;
+
+import java.net.MalformedURLException;
+import java.net.URI;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.refresh;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.setWebDriver;
 import static io.qameta.allure.Allure.step;
 
 @DisplayName("Тесты на сайте Эконом-аптека")
-class AptekaTest extends TestBase {
+class AptekaTest {
+    @BeforeAll
+    static void setUp() throws MalformedURLException {
+        boolean isRemote = true;
+        if (isRemote) {
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setBrowserName("chrome");
+            capabilities.setCapability("enableVNC:", true);
+            WebDriver driver = new RemoteWebDriver(URI.create("http://localhost:4444/wd/hub").toURL(), capabilities);
+            setWebDriver(driver);
+        } else {
+            Configuration.browser = "firefox";
+        }
+    }
 
+
+    @AfterEach
+    void addAttachments() {
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        closeWebDriver();
+    }
     MainPage mainPage = new MainPage();
     Search search = new Search();
     CityPopup cityPopup = new CityPopup();
